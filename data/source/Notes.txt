@@ -1,0 +1,29 @@
+Requested data NOT included in this reponse:
+
+Data elements for certified officers:
+* Officer’s city and/or zip code of residence
+	--We do not keep addresses of officers in our database.
+* Date of last action on certification
+	--Other than decertification, we have no such system at this time.
+* Disciplinary actions taken against this officer’s certification
+	--Other than decertification, we have no such system at this time.
+* Dates of disciplinary actions taken against this officer’s certification
+	--Other than decertification, we have no such system at this time.
+* Training history/additional certifications of this officer, if available
+	--We do not presently have an "additional training" report for all officers.
+
+Data elements for decertified officers:
+* Officer’s city and/or zip code of residence.
+	--We do not keep addresses of officers in our database.
+* POST case number, if applicable
+	--This is not part of our review process or tracked in our database at this time.
+* Decertification action taken (revocation, suspension, voluntary surrender, etc.)
+	--We ONLY do decertification at this time, so all actions would be "revocation."
+
+Notes/Instructions:
+5 data file are included.
+Individuals includes everyone in our system, and may include some non-sworn personnel.
+Certificates lists who was certified, to which level, and the fiscal year of certification. JOIN ON Certificates.PTBID = Individuals.PTBID
+Employments lists who worked where and when. JOIN ON Employments.PTBID = Individuals.PTBID
+Employers lists the hiring entities in out system. JOIN ON Employers.EmployerId = Employments.EmployerId
+DecertificationReport lists officers in our system as decertified. This is also available as a PDF in the response folder. JOIN ON Decertifications.PTBID = Individuals.PTBID
