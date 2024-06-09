@@ -32,14 +32,15 @@ The Training and Standards Board provided five data files in response to a state
 
 ## Output
 
-The script generates six CSV files:
+The script generates seven CSV files:
 
 1. `il-2023-original-officers.csv`: Contains personal information data in csv format with all original data and fields provided by the state
 2. `il-2023-original-licenses.csv`: Contains certification data in csv format with all original data and fields provided by the state
 3. `il-2023-original-employment.csv`: Contains employment history data in csv format with all original data and fields provided by the state
 4. `il-2023-original-agencies.csv`: Contains employer data in csv format with all original data and fields provided by the state
 5. `il-2023-original-decertifications.csv`: Contains decertification data in csv format with all original data and fields provided by the state
-6. `il-2023-index.csv`: Contains a standardized index of officers, with several additional fields indicating the current status of an officer's license, including if it is revoked or suspended and the reason. These final fields are snapshots in time, as of the data provided in October 2022.
+6. `il-2023-index.csv`: Contains a standardized index of officers' work histories.
+7. `il-2023-index-enhanced.csv`: Contains a standardized index of officers, with several additional fields indicating the current status of an officer's license, including if it is revoked or suspended and the reason. These final fields are snapshots in time, as of the data provided in October 2022.
 
 The output files are stored in the `data/processed/` directory.
 

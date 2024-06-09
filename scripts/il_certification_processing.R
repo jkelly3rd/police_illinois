@@ -20,6 +20,7 @@ decertifications_file = "data/source/Decertifications.csv"
 
 # Define the paths to the output CSV files
 il_index = "data/processed/il-2023-index.csv"
+il_index_enhanced = "data/processed/il-2023-index-enhanced.csv"
 il_original_persons = "data/processed/il-2023-original-officers.csv"
 il_original_licenses = "data/processed/il-2023-original-licenses.csv"
 il_original_employment = "data/processed/il-2023-original-employment.csv"
@@ -98,7 +99,13 @@ illinois_roster <- illinois_roster %>% select(-agency_nbr)
 il_officers_index <- bind_rows(template_index,illinois_roster)
 il_officers_index <- il_officers_index %>% arrange(desc(person_nbr), desc(start_date), full_name)
 
-# Export csv of work history index for project
+# Export csv of enhanced work history index for project
+il_officers_index %>% write_csv(il_index_enhanced)
+
+# Remove extra columns and export csv of standard work history index for project
+il_officers_index <- il_officers_index %>% select(person_nbr, full_name, first_name, middle_name, last_name, suffix, year_of_birth, age, agency, type, rank, start_date, end_date)
+
+# Export csv of standard work history index for project
 il_officers_index %>% write_csv(il_index)
 
 # Export a series of csv files with the original data obtained from Illinois
